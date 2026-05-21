@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Movimientos</title>
+
+  <style>
+    body{
+      font-family: Arial;
+      padding: 20px;
+      background:#f4f4f4;
+    }
+
+    table{
+      width:100%;
+      border-collapse: collapse;
+      background:white;
+    }
+
+    th, td{
+      border:1px solid #ccc;
+      padding:10px;
+    }
+
+    th{
+      background:#007bff;
+      color:white;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Movimientos</h1>
+
+<table>
+  <thead>
+    <tr id="header"></tr>
+  </thead>
+  <tbody id="body"></tbody>
+</table>
+
+<script>
+
+async function cargarMovimientos(){
+
+  try{
+
+    const response = await fetch(
+      'http://localhost:8081/snpp2/api/v1/movimientos'
+    );
+
+    const data = await response.json();
+
+    console.log(data);
+
+    if(data.length === 0) return;
+
+    // headers
+    const header = document.getElementById('header');
+
+    Object.keys(data[0]).forEach(key => {
+
+      const th = document.createElement('th');
+
+      th.innerText = key;
+
+      header.appendChild(th);
+
+    });
+
+    // rows
+    const body = document.getElementById('body');
+
+    data.forEach(item => {
+
+      const tr = document.createElement('tr');
+
+      Object.values(item).forEach(value => {
+
+        const td = document.createElement('td');
+
+        td.innerText = value;
+
+        tr.appendChild(td);
+
+      });
+
+      body.appendChild(tr);
+
+    });
+
+  }catch(error){
+
+    console.error(error);
+
+    alert('Error al consumir API');
+
+  }
+
+}
+
+cargarMovimientos();
+
+</script>
+
+</body>
+</html>
