@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Recuperación de cuenta</title>
+</head>
+<body class="bg-light d-flex justify-content-center align-items-center vh-100">
+<body style="background-image: url('https://wallpapers.com/images/hd/facebook-with-social-media-icons-nldhpmhq1r6q37ts.jpg');
+             background-size: cover;
+             background-position: center;
+             background-repeat: no-repeat;">
+
+<div class="card shadow" style="max-width: 500px; width: 100%;">
+  <div class="card-header text-center bg-primary text-white">
+    Recuperación de cuenta
+  </div>
+
+  <form class="p-4 needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="correo" class="form-label">Correo electrónico</label>
+      <input type="email" class="form-control" id="correo" required>
+      <div class="form-text">Debe tener entre 8 y 20 caracteres.</div>
+      <div class="invalid-feedback">Ingresa un correo válido.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="nuevaPassword" class="form-label">Contraseña nueva</label>
+      <input type="password" class="form-control" id="nuevaPassword" required>
+      <div class="form-text">Debe tener entre 8 y 20 caracteres, incluir letras y números, sin espacios ni emojis.</div>
+      <div class="invalid-feedback">Ingresa una contraseña válida.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="repetirPassword" class="form-label">Repetir contraseña</label>
+      <input type="password" class="form-control" id="repetirPassword" required>
+      <div class="invalid-feedback">Debes repetir la contraseña.</div>
+    </div>
+
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input" id="recordarme">
+      <label class="form-check-label" for="recordarme">Recordarme</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Guardar cambios</button>
+  </form>
+
+  <div class="card-footer text-center text-muted">
+    Tus datos están protegidos
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
